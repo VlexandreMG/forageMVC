@@ -18,100 +18,108 @@ if (!empty($idDemande)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des alertes</title>
     <style>
-        /* Couleurs de base */
         :root {
-            --gris-fonce: #4A4A4A;
-            --gris-moyen: #8C8C8C;
-            --gris-clair: #F5F5F5;
-            --beige-clair: #F2EDE4;
-            --blanc: #FFFFFF;
+            --bg: #f5f5f5;
+            --surface: #ffffff;
+            --text: #111111;
+            --muted: #6a6a6a;
+            --border: #dedede;
+            --shadow: 0 22px 52px rgba(0, 0, 0, 0.10);
+        }
 
-            --rouge: #c0392b;
-            --rouge-bg: #fdf2f2;
-            --orange: #e67e22;
-            --orange-bg: #fef5ec;
+        * {
+            box-sizing: border-box;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background-color: var(--gris-clair);
-            color: var(--gris-fonce);
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            min-height: 100vh;
             margin: 0;
-            padding: 40px 20px;
+            padding: 36px 20px;
+            color: var(--text);
+            background:
+                linear-gradient(180deg, #111111 0 150px, transparent 150px 100%),
+                radial-gradient(circle at right 15% top 5%, rgba(0, 0, 0, 0.08), transparent 26%),
+                var(--bg);
         }
 
         .container {
-            max-width: 900px;
+            width: min(100%, 980px);
             margin: 0 auto;
-            background: var(--blanc);
             padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 28px;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(8px);
         }
 
         h1 {
-            font-weight: 300;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 0;
-            margin-bottom: 25px;
-            border-bottom: 2px solid var(--beige-clair);
-            padding-bottom: 15px;
+            margin: 0 0 22px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+            font-size: clamp(1.4rem, 2vw, 1.9rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            text-transform: none;
         }
 
-        /* Style simple pour le tableau */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 15px;
+            margin-top: 14px;
+            overflow: hidden;
+            border-radius: 20px;
         }
 
         th {
-            background-color: var(--gris-fonce);
-            color: var(--blanc);
-            padding: 14px 18px;
+            background-color: var(--text);
+            color: var(--surface);
+            padding: 16px 18px;
             text-align: left;
-            font-size: 0.85rem;
+            font-size: 0.78rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.12em;
         }
 
         td {
-            padding: 14px 18px;
-            border-bottom: 1px solid var(--beige-clair);
-            font-size: 0.95rem;
+            padding: 16px 18px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.94rem;
         }
 
-        /* Effet de survol sur les lignes */
         tbody tr:hover {
-            background-color: #fcfbf9;
+            background-color: #fafafa;
         }
 
-        /* Badges simples pour la colonne Alerte */
         .badge {
-            display: inline-block;
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
+            display: inline-flex;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.76rem;
+            font-weight: 800;
             text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border: 1px solid var(--border);
+            background: #f4f4f4;
+            color: var(--text);
         }
 
-        .badge-rouge {
-            background-color: var(--rouge-bg);
-            color: var(--rouge);
-        }
-
+        .badge-rouge,
         .badge-orange {
-            background-color: var(--orange-bg);
-            color: var(--orange);
+            background: #f4f4f4;
+            color: var(--text);
         }
 
         .empty-text {
             text-align: center;
-            padding: 30px;
-            color: var(--gris-moyen);
+            padding: 48px 24px;
+            color: var(--muted);
             font-style: italic;
+            border: 1px dashed var(--border);
+            border-radius: 18px;
+            margin-top: 12px;
+            background: #fcfcfc;
         }
     </style>
 </head>

@@ -13,46 +13,57 @@
             <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
             <style>
                 :root {
-                    --bg: #f4f4f4;
+                    --bg: #f5f5f5;
                     --surface: #ffffff;
                     --text: #111111;
-                    --muted: #666666;
-                    --border: #d9d9d9;
-                    --shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+                    --muted: #6a6a6a;
+                    --border: #dedede;
+                    --shadow: 0 22px 52px rgba(0, 0, 0, 0.10);
+                }
+
+                * {
+                    box-sizing: border-box;
                 }
 
                 body {
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                    background-color: var(--bg);
-                    color: var(--text);
+                    font-family: 'Segoe UI', Tahoma, sans-serif;
+                    min-height: 100vh;
                     margin: 0;
-                    padding: 40px 20px;
+                    padding: 36px 20px;
+                    color: var(--text);
+                    background:
+                        linear-gradient(180deg, #111111 0 150px, transparent 150px 100%),
+                        radial-gradient(circle at right 15% top 5%, rgba(0, 0, 0, 0.08), transparent 26%),
+                        var(--bg);
                 }
 
                 .container {
-                    max-width: 1100px;
+                    width: min(100%, 1220px);
                     margin: 0 auto;
-                    background: var(--surface);
-                    padding: 30px;
-                    border-radius: 14px;
+                    padding: 28px;
+                    border-radius: 28px;
                     border: 1px solid var(--border);
+                    background: rgba(255, 255, 255, 0.96);
                     box-shadow: var(--shadow);
+                    backdrop-filter: blur(8px);
                 }
 
                 h1 {
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    margin-bottom: 28px;
+                    margin: 0 0 24px;
+                    padding-bottom: 18px;
                     border-bottom: 1px solid var(--border);
-                    padding-bottom: 14px;
-                    font-size: 1.2rem;
+                    font-size: clamp(1.4rem, 2vw, 2rem);
+                    font-weight: 800;
+                    letter-spacing: -0.04em;
+                    text-transform: none;
                 }
 
                 table {
                     width: 100%;
                     border-collapse: collapse;
-                    margin-top: 10px;
+                    margin-top: 12px;
+                    overflow: hidden;
+                    border-radius: 20px;
                 }
 
                 thead {
@@ -61,18 +72,18 @@
                 }
 
                 th {
-                    padding: 15px;
+                    padding: 16px 14px;
                     text-align: left;
-                    font-weight: 700;
-                    font-size: 0.82rem;
+                    font-weight: 800;
+                    font-size: 0.78rem;
                     text-transform: uppercase;
-                    letter-spacing: 0.5px;
+                    letter-spacing: 0.12em;
                 }
 
                 td {
-                    padding: 15px;
+                    padding: 16px 14px;
                     border-bottom: 1px solid var(--border);
-                    font-size: 0.92rem;
+                    font-size: 0.94rem;
                 }
 
                 tbody tr:hover {
@@ -83,7 +94,7 @@
                     padding: 5px 12px;
                     border-radius: 999px;
                     font-size: 0.75rem;
-                    font-weight: 700;
+                    font-weight: 800;
                     background-color: #f2f2f2;
                     color: var(--text);
                     border: 1px solid var(--border);
@@ -92,14 +103,16 @@
                 .link-details,
                 tbody td a {
                     text-decoration: none;
-                    font-size: 0.82rem;
-                    padding: 8px 14px;
-                    border-radius: 8px;
+                    font-size: 0.78rem;
+                    padding: 9px 14px;
+                    border-radius: 999px;
                     background: var(--surface);
                     color: var(--text);
-                    font-weight: 600;
+                    font-weight: 800;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
                     border: 1px solid var(--text);
-                    transition: background-color 0.2s ease, color 0.2s ease;
+                    transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
                     display: inline-flex;
                     align-items: center;
                     margin-right: 8px;
@@ -110,15 +123,16 @@
                 tbody td a:hover {
                     background: var(--text);
                     color: var(--surface);
+                    transform: translateY(-1px);
                 }
 
                 .ref-demande {
                     color: var(--muted);
-                    font-weight: 600;
+                    font-weight: 700;
                     font-family: monospace;
                     background: #f5f5f5;
-                    padding: 3px 8px;
-                    border-radius: 6px;
+                    padding: 4px 9px;
+                    border-radius: 999px;
                     border: 1px solid var(--border);
                 }
             </style>

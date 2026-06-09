@@ -13,57 +13,68 @@
             <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
             <style>
                 :root {
-                    --bg: #f4f4f4;
+                    --bg: #f5f5f5;
                     --surface: #ffffff;
                     --text: #111111;
-                    --muted: #666666;
-                    --border: #d9d9d9;
-                    --shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+                    --muted: #6a6a6a;
+                    --border: #dedede;
+                    --shadow: 0 22px 52px rgba(0, 0, 0, 0.10);
+                }
+
+                * {
+                    box-sizing: border-box;
                 }
 
                 body {
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                    background-color: var(--bg);
-                    color: var(--text);
+                    font-family: 'Segoe UI', Tahoma, sans-serif;
+                    min-height: 100vh;
                     margin: 0;
-                    padding: 40px 20px;
+                    padding: 36px 20px;
+                    color: var(--text);
+                    background:
+                        linear-gradient(180deg, #111111 0 150px, transparent 150px 100%),
+                        radial-gradient(circle at right 15% top 5%, rgba(0, 0, 0, 0.08), transparent 26%),
+                        var(--bg);
                 }
 
                 .container {
-                    max-width: 1100px;
+                    width: min(100%, 1220px);
                     margin: 0 auto;
-                    background: var(--surface);
-                    padding: 30px;
-                    border-radius: 14px;
+                    padding: 28px;
+                    border-radius: 28px;
                     border: 1px solid var(--border);
+                    background: rgba(255, 255, 255, 0.96);
                     box-shadow: var(--shadow);
+                    backdrop-filter: blur(8px);
                 }
 
                 h1 {
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    margin-bottom: 28px;
+                    margin: 0 0 24px;
+                    padding-bottom: 18px;
                     border-bottom: 1px solid var(--border);
-                    padding-bottom: 14px;
-                    font-size: 1.2rem;
+                    font-size: clamp(1.4rem, 2vw, 2rem);
+                    font-weight: 800;
+                    letter-spacing: -0.04em;
+                    text-transform: none;
                 }
 
                 .toolbar {
-                    margin-bottom: 24px;
+                    margin-bottom: 22px;
                     display: flex;
                     flex-wrap: wrap;
-                    gap: 12px;
+                    gap: 10px;
                 }
 
                 .btn-top,
                 .link-devis {
                     text-decoration: none;
-                    padding: 10px 16px;
-                    border-radius: 8px;
-                    font-size: 0.88rem;
-                    font-weight: 600;
-                    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+                    padding: 11px 16px;
+                    border-radius: 999px;
+                    font-size: 0.84rem;
+                    font-weight: 700;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                    transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease;
                     display: inline-flex;
                     align-items: center;
                     gap: 8px;
@@ -79,6 +90,7 @@
 
                 .btn-top:hover,
                 .link-devis:hover {
+                    transform: translateY(-1px);
                     background-color: var(--text);
                     color: var(--surface);
                 }
@@ -86,7 +98,9 @@
                 table {
                     width: 100%;
                     border-collapse: collapse;
-                    margin-top: 10px;
+                    margin-top: 12px;
+                    overflow: hidden;
+                    border-radius: 20px;
                 }
 
                 thead {
@@ -95,18 +109,19 @@
                 }
 
                 th {
-                    padding: 15px;
+                    padding: 16px 14px;
                     text-align: left;
-                    font-weight: 700;
-                    font-size: 0.82rem;
+                    font-weight: 800;
+                    font-size: 0.78rem;
                     text-transform: uppercase;
-                    letter-spacing: 0.5px;
+                    letter-spacing: 0.12em;
                 }
 
                 td {
-                    padding: 15px;
+                    padding: 16px 14px;
                     border-bottom: 1px solid var(--border);
-                    font-size: 0.92rem;
+                    font-size: 0.94rem;
+                    vertical-align: top;
                 }
 
                 tbody tr:hover {
@@ -117,7 +132,7 @@
                     padding: 5px 12px;
                     border-radius: 999px;
                     font-size: 0.75rem;
-                    font-weight: 700;
+                    font-weight: 800;
                     background-color: #f2f2f2;
                     color: var(--text);
                     border: 1px solid var(--border);
@@ -133,13 +148,13 @@
                 .btn-icon {
                     text-decoration: none;
                     font-size: 1rem;
-                    width: 36px;
-                    height: 36px;
+                    width: 38px;
+                    height: 38px;
                     display: inline-flex;
                     align-items: center;
                     justify-content: center;
-                    border-radius: 8px;
-                    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+                    border-radius: 12px;
+                    transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
                     background: var(--surface);
                     color: var(--text);
                     border: 1px solid var(--text);
@@ -148,6 +163,7 @@
                 .btn-icon:hover {
                     background: var(--text);
                     color: var(--surface);
+                    transform: translateY(-1px);
                 }
 
                 .link-update,
@@ -157,17 +173,18 @@
                 }
 
                 .link-devis {
-                    font-size: 0.82rem;
+                    font-size: 0.78rem;
                 }
 
                 .empty-msg {
                     text-align: center;
-                    padding: 40px;
+                    padding: 48px 24px;
                     color: var(--muted);
                     font-style: italic;
                     border: 1px dashed var(--border);
-                    border-radius: 12px;
-                    margin-top: 10px;
+                    border-radius: 18px;
+                    margin-top: 12px;
+                    background: #fcfcfc;
                 }
             </style>
         </head>

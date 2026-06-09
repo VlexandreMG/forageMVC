@@ -267,22 +267,22 @@
 
                     <!-- Section Lignes de Devis -->
                     <div
-                        style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--beige-clair); padding-bottom: 10px;">
+                        style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-top: 8px;">
                         <h2 class="section-title" style="margin: 0;">Éléments du devis (Sous-devis)</h2>
                     </div>
 
                     <!-- Entêtes factices pour la structure de grille claire -->
                     <div
-                        style="display: grid; grid-template-columns: 3fr 1fr 1.5fr 1.5fr max-content; gap: 15px; margin-top: 15px; padding: 0 5px;">
+                        style="display: grid; grid-template-columns: 3fr 1fr 1.5fr 1.5fr max-content; gap: 15px; margin-top: 18px; padding: 0 6px 6px; border-bottom: 1px solid var(--border);">
                         <span
-                            style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--gris-moyen);">Description</span>
+                            style="font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted);">Description</span>
                         <span
-                            style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--gris-moyen);">Qté</span>
+                            style="font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted);">Qté</span>
                         <span
-                            style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--gris-moyen);">Prix
+                            style="font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted);">Prix
                             Unitaire (Ar)</span>
                         <span
-                            style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--gris-moyen);">Montant</span>
+                            style="font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted);">Montant</span>
                         <span style="width: 42px;"></span>
                     </div>
 

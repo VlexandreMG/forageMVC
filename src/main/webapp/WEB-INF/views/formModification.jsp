@@ -10,52 +10,77 @@
             <title>Modifier Demande #${demande.id}</title>
             <style>
                 :root {
-                    --bg: #f4f4f4;
+                    --bg: #f5f5f5;
                     --surface: #ffffff;
                     --text: #111111;
-                    --muted: #666666;
-                    --border: #d9d9d9;
-                    --shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+                    --muted: #6a6a6a;
+                    --border: #dedede;
+                    --shadow: 0 22px 52px rgba(0, 0, 0, 0.10);
+                }
+
+                * {
+                    box-sizing: border-box;
                 }
 
                 body {
                     font-family: 'Segoe UI', Tahoma, sans-serif;
-                    background-color: var(--bg);
+                    min-height: 100vh;
                     margin: 0;
-                    padding: 40px 20px;
-                    display: flex;
-                    justify-content: center;
+                    padding: 32px 20px;
                     color: var(--text);
+                    background:
+                        linear-gradient(180deg, #111111 0 170px, transparent 170px 100%),
+                        radial-gradient(circle at right 20% top 6%, rgba(0, 0, 0, 0.08), transparent 30%),
+                        var(--bg);
                 }
 
                 .form-card {
-                    background: var(--surface);
-                    width: 100%;
-                    max-width: 800px;
-                    padding: 40px;
-                    border-radius: 14px;
+                    position: relative;
+                    width: min(100%, 860px);
+                    margin: 0 auto;
+                    padding: 34px;
+                    border-radius: 28px;
                     border: 1px solid var(--border);
+                    background: rgba(255, 255, 255, 0.96);
                     box-shadow: var(--shadow);
+                    backdrop-filter: blur(8px);
+                }
+
+                .form-card::before {
+                    content: 'Modification';
+                    display: block;
+                    margin-bottom: 16px;
+                    font-size: 0.78rem;
+                    letter-spacing: 0.18em;
+                    text-transform: uppercase;
+                    color: var(--muted);
                 }
 
                 h1 {
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    text-align: center;
-                    margin-bottom: 40px;
-                    color: var(--text);
-                    font-size: 1.2rem;
+                    margin: 0 0 28px;
+                    font-size: clamp(1.4rem, 2vw, 2rem);
+                    font-weight: 800;
+                    letter-spacing: -0.04em;
+                    text-transform: none;
+                    text-align: left;
                 }
 
                 .form-grid {
                     display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 20px;
+                    grid-template-columns: repeat(12, 1fr);
+                    gap: 18px;
                 }
 
                 .full-width {
-                    grid-column: span 2;
+                    grid-column: span 12;
+                }
+
+                .form-grid > .form-group {
+                    grid-column: span 6;
+                }
+
+                .form-grid > .full-width {
+                    grid-column: span 12;
                 }
 
                 .form-group {
@@ -64,22 +89,25 @@
                 }
 
                 label {
-                    font-size: 0.85rem;
-                    font-weight: 600;
-                    color: var(--muted);
                     margin-bottom: 8px;
+                    font-size: 0.8rem;
+                    font-weight: 700;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
+                    color: var(--muted);
                 }
 
                 select,
                 input,
                 textarea {
-                    padding: 12px 14px;
+                    width: 100%;
+                    padding: 14px 15px;
                     border: 1px solid var(--border);
-                    border-radius: 8px;
-                    font-size: 1rem;
-                    background-color: #ffffff;
+                    border-radius: 16px;
+                    background: #fbfbfb;
                     color: var(--text);
-                    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+                    font-size: 0.98rem;
+                    transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
                     outline: none;
                 }
 
@@ -87,43 +115,45 @@
                 input:focus,
                 textarea:focus {
                     border-color: var(--text);
-                    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
-                    background-color: #ffffff;
+                    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.07);
+                    transform: translateY(-1px);
                 }
 
                 textarea {
-                    height: 100px;
+                    min-height: 120px;
                     resize: vertical;
                 }
 
                 button {
-                    margin-top: 30px;
+                    margin-top: 26px;
                     width: 100%;
-                    padding: 15px;
-                    background-color: var(--text);
-                    color: var(--surface);
+                    padding: 15px 18px;
                     border: 1px solid var(--text);
-                    border-radius: 8px;
-                    font-size: 1rem;
-                    font-weight: 700;
-                    cursor: pointer;
-                    transition: background-color 0.2s ease, color 0.2s ease;
+                    border-radius: 999px;
+                    background: var(--text);
+                    color: var(--surface);
+                    font-weight: 800;
+                    letter-spacing: 0.14em;
                     text-transform: uppercase;
-                    letter-spacing: 0.5px;
+                    cursor: pointer;
+                    transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
                 }
 
                 button:hover {
-                    background-color: var(--surface);
+                    background: var(--surface);
                     color: var(--text);
+                    transform: translateY(-1px);
                 }
 
-                @media (max-width: 600px) {
-                    .form-grid {
-                        grid-template-columns: 1fr;
+                @media (max-width: 720px) {
+                    .form-card {
+                        padding: 24px;
+                        border-radius: 22px;
                     }
 
+                    .form-grid > .form-group,
                     .full-width {
-                        grid-column: span 1;
+                        grid-column: span 12;
                     }
                 }
             </style>

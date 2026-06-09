@@ -10,110 +10,133 @@
             <title>Connexion | Administration</title>
             <style>
                 :root {
-                    --bg: #f4f4f4;
+                    --bg: #f6f6f6;
                     --surface: #ffffff;
                     --text: #111111;
-                    --muted: #666666;
-                    --border: #d9d9d9;
-                    --shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+                    --muted: #6b6b6b;
+                    --border: #dcdcdc;
+                    --shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+                }
+
+                * {
+                    box-sizing: border-box;
                 }
 
                 body {
                     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                    background-color: var(--bg);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
                     min-height: 100vh;
                     margin: 0;
                     color: var(--text);
+                    display: grid;
+                    place-items: center;
+                    background:
+                        radial-gradient(circle at top left, rgba(0, 0, 0, 0.95) 0 22%, transparent 22.5%),
+                        linear-gradient(135deg, #111111 0 34%, #f6f6f6 34% 100%);
+                    padding: 24px;
                 }
 
                 .login-container {
-                    background-color: var(--surface);
+                    position: relative;
+                    width: min(100%, 440px);
                     padding: 40px;
-                    border-radius: 14px;
-                    box-shadow: var(--shadow);
-                    width: calc(100% - 32px);
-                    max-width: 400px;
                     border: 1px solid var(--border);
+                    border-radius: 24px;
+                    background: rgba(255, 255, 255, 0.96);
+                    box-shadow: var(--shadow);
+                    overflow: hidden;
+                    backdrop-filter: blur(8px);
+                }
+
+                .login-container::before {
+                    content: '';
+                    position: absolute;
+                    inset: 0 auto auto 0;
+                    width: 100%;
+                    height: 8px;
+                    background: linear-gradient(90deg, #111111 0 55%, #dcdcdc 55% 100%);
                 }
 
                 h1 {
-                    text-align: center;
-                    color: var(--text);
-                    font-weight: 700;
-                    margin-bottom: 28px;
-                    letter-spacing: 1px;
+                    margin: 12px 0 30px;
+                    text-align: left;
+                    font-size: 1.45rem;
+                    font-weight: 800;
+                    letter-spacing: 0.12em;
                     text-transform: uppercase;
-                    font-size: 1.2rem;
                 }
 
                 .form-group {
-                    margin-bottom: 20px;
+                    margin-bottom: 18px;
                 }
 
                 label {
                     display: block;
                     margin-bottom: 8px;
-                    font-size: 0.9rem;
-                    font-weight: 600;
+                    font-size: 0.82rem;
+                    font-weight: 700;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
                     color: var(--muted);
                 }
 
                 input[type="text"],
                 input[type="password"] {
                     width: 100%;
-                    padding: 12px 14px;
+                    padding: 14px 15px;
                     border: 1px solid var(--border);
-                    border-radius: 8px;
-                    box-sizing: border-box;
-                    background-color: #ffffff;
+                    border-radius: 14px;
+                    background: #fafafa;
                     color: var(--text);
-                    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+                    font-size: 0.98rem;
+                    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
                     outline: none;
                 }
 
                 input[type="text"]:focus,
                 input[type="password"]:focus {
                     border-color: var(--text);
-                    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+                    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.08);
+                    transform: translateY(-1px);
                 }
 
                 .error-message {
-                    background-color: #f7f7f7;
-                    color: var(--text);
-                    padding: 12px;
-                    border-radius: 8px;
-                    font-size: 0.85rem;
-                    margin-bottom: 20px;
-                    text-align: center;
+                    margin-bottom: 18px;
+                    padding: 12px 14px;
+                    border-radius: 12px;
+                    background: #f3f3f3;
                     border: 1px solid var(--border);
+                    color: var(--text);
+                    font-size: 0.86rem;
                 }
 
                 input[type="submit"] {
                     width: 100%;
-                    padding: 14px;
-                    background-color: var(--text);
-                    color: var(--surface);
+                    margin-top: 6px;
+                    padding: 15px;
                     border: 1px solid var(--text);
-                    border-radius: 8px;
+                    border-radius: 14px;
+                    background: var(--text);
+                    color: var(--surface);
                     cursor: pointer;
-                    font-size: 0.95rem;
-                    font-weight: 700;
-                    letter-spacing: 0.5px;
-                    transition: background-color 0.2s ease, color 0.2s ease;
+                    font-size: 0.92rem;
+                    font-weight: 800;
+                    letter-spacing: 0.12em;
+                    text-transform: uppercase;
+                    transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
                 }
 
                 input[type="submit"]:hover {
-                    background-color: var(--surface);
+                    background: var(--surface);
                     color: var(--text);
+                    transform: translateY(-1px);
                 }
 
                 .footer-text {
+                    margin-top: 22px;
                     text-align: center;
-                    margin-top: 20px;
-                    font-size: 0.8rem;
+                    font-size: 0.78rem;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
                     color: var(--muted);
                 }
             </style>
