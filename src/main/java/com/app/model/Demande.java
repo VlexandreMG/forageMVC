@@ -33,15 +33,26 @@ public class Demande {
     @Column(name = "lieu")
     private String lieu;
 
+    @Column(name="duree_travail")
+    private int dureeTravail;
+
+    
     @OneToMany(mappedBy = "demande")
     private List<DemandeStatut> demandeStatut = new ArrayList<>();
-
+    
     @Transient
     private DemandeStatut currentStatut;
-
+    
     @OneToMany(mappedBy = "demande")
     private List<Devis> devis = new ArrayList<>();
+    
+    public int getDureeTravail() {
+        return dureeTravail;
+    }
 
+    public void setDureeTravail(int dureeTravail) {
+        this.dureeTravail = dureeTravail;
+    }
     public Integer getId() {
         return id;
     }

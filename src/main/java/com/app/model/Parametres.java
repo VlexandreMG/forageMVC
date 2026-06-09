@@ -24,10 +24,20 @@ public class Parametres {
     @Column(name = "DT")
     private Double DT;
 
+    @Column(name="DT2")
+    private Double DT2;
+
     @Column(name = "alerte")
     private String alerte;
-
+    
     public Parametres() {
+    }
+    public Double getDT2() {
+        return DT2;
+    }
+
+    public void setDT2(Double dT2) {
+        DT2 = dT2;
     }
 
     public Integer getId() {
