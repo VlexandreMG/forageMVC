@@ -1,0 +1,22 @@
+#!/bin/bash
+
+mysql -u root -p forage <<EOF
+
+SET FOREIGN_KEY_CHECKS = 0;
+
+TRUNCATE TABLE sousDevis;
+TRUNCATE TABLE devis;
+TRUNCATE TABLE demandeStatut;
+TRUNCATE TABLE demande;
+TRUNCATE TABLE parametres;
+TRUNCATE TABLE typeDevis;
+TRUNCATE TABLE statut;
+TRUNCATE TABLE client;
+TRUNCATE TABLE commune;
+TRUNCATE TABLE district;
+TRUNCATE TABLE region;
+TRUNCATE TABLE user;
+
+SET FOREIGN_KEY_CHECKS = 1;
+
+EOF

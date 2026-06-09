@@ -1,0 +1,8 @@
+{
+    "java.project.sourcePaths": [
+        "src/main/java/com/app",
+        "src/main/java"
+    ],
+    "editor.inlineSuggest.enabled": false,
+    "github.copilot.nextEditSuggestions.enabled": false
+}
