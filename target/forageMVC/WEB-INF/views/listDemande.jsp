@@ -13,75 +13,74 @@
             <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
             <style>
                 :root {
-                    --gris-fonce: #4A4A4A;
-                    --gris-moyen: #8C8C8C;
-                    --gris-clair: #F5F5F5;
-                    --beige: #D9D2C5;
-                    --beige-clair: #F2EDE4;
-                    --blanc: #FFFFFF;
-
-                    /* Couleurs vives demandées */
-                    --bleu-vif: #007bff;
-                    --rouge-vif: #dc3545;
+                    --bg: #f4f4f4;
+                    --surface: #ffffff;
+                    --text: #111111;
+                    --muted: #666666;
+                    --border: #d9d9d9;
+                    --shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
                 }
 
                 body {
-                    font-family: 'Inter', sans-serif;
-                    background-color: var(--gris-clair);
-                    color: var(--gris-fonce);
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    background-color: var(--bg);
+                    color: var(--text);
                     margin: 0;
-                    padding: 40px;
+                    padding: 40px 20px;
                 }
 
                 .container {
                     max-width: 1100px;
                     margin: 0 auto;
-                    background: var(--blanc);
+                    background: var(--surface);
                     padding: 30px;
-                    border-radius: 12px;
-                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+                    border-radius: 14px;
+                    border: 1px solid var(--border);
+                    box-shadow: var(--shadow);
                 }
 
                 h1 {
-                    font-weight: 300;
+                    font-weight: 700;
                     text-transform: uppercase;
-                    letter-spacing: 2px;
-                    margin-bottom: 30px;
-                    border-bottom: 2px solid var(--beige-clair);
-                    padding-bottom: 15px;
+                    letter-spacing: 1px;
+                    margin-bottom: 28px;
+                    border-bottom: 1px solid var(--border);
+                    padding-bottom: 14px;
+                    font-size: 1.2rem;
                 }
 
                 .toolbar {
-                    margin-bottom: 25px;
+                    margin-bottom: 24px;
                     display: flex;
-                    gap: 15px;
+                    flex-wrap: wrap;
+                    gap: 12px;
                 }
 
-                .btn-top {
+                .btn-top,
+                .link-devis {
                     text-decoration: none;
-                    padding: 10px 20px;
-                    border-radius: 6px;
-                    font-size: 0.9rem;
+                    padding: 10px 16px;
+                    border-radius: 8px;
+                    font-size: 0.88rem;
                     font-weight: 600;
-                    transition: all 0.3s ease;
-                    display: flex;
+                    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+                    display: inline-flex;
                     align-items: center;
                     gap: 8px;
-                }
-
-                .btn-add {
-                    background-color: var(--beige);
-                    color: var(--gris-fonce);
+                    border: 1px solid var(--text);
+                    background: var(--surface);
+                    color: var(--text);
                 }
 
                 .btn-view {
-                    background-color: var(--gris-fonce);
-                    color: var(--blanc);
+                    background-color: var(--text);
+                    color: var(--surface);
                 }
 
-                .btn-top:hover {
-                    opacity: 0.8;
-                    transform: translateY(-1px);
+                .btn-top:hover,
+                .link-devis:hover {
+                    background-color: var(--text);
+                    color: var(--surface);
                 }
 
                 table {
@@ -91,100 +90,84 @@
                 }
 
                 thead {
-                    background-color: var(--gris-fonce);
-                    color: var(--blanc);
+                    background-color: var(--text);
+                    color: var(--surface);
                 }
 
                 th {
                     padding: 15px;
                     text-align: left;
-                    font-weight: 600;
-                    font-size: 0.85rem;
+                    font-weight: 700;
+                    font-size: 0.82rem;
                     text-transform: uppercase;
+                    letter-spacing: 0.5px;
                 }
 
                 td {
                     padding: 15px;
-                    border-bottom: 1px solid var(--gris-clair);
-                    font-size: 0.9rem;
+                    border-bottom: 1px solid var(--border);
+                    font-size: 0.92rem;
+                }
+
+                tbody tr:hover {
+                    background-color: #fafafa;
                 }
 
                 .statut-badge {
                     padding: 5px 12px;
-                    border-radius: 20px;
+                    border-radius: 999px;
                     font-size: 0.75rem;
-                    font-weight: bold;
-                    background-color: rgb(169, 246, 169);
-                    color: var(--gris-fonce);
-                    border: 1px solid var(--beige);
+                    font-weight: 700;
+                    background-color: #f2f2f2;
+                    color: var(--text);
+                    border: 1px solid var(--border);
                 }
 
-                /* --- Zone Icônes Bleu et Rouge --- */
                 .action-links {
                     display: flex;
-                    gap: 12px;
+                    gap: 10px;
                     align-items: center;
+                    flex-wrap: wrap;
                 }
 
                 .btn-icon {
                     text-decoration: none;
-                    font-size: 1.1rem;
+                    font-size: 1rem;
                     width: 36px;
                     height: 36px;
-                    display: flex;
+                    display: inline-flex;
                     align-items: center;
                     justify-content: center;
                     border-radius: 8px;
-                    transition: all 0.2s ease;
-                    background: #fff;
-                    border: 1px solid #eee;
+                    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+                    background: var(--surface);
+                    color: var(--text);
+                    border: 1px solid var(--text);
                 }
 
-                /* MODIFIER : VRAI BLEU */
-                .link-update {
-                    color: var(--bleu-vif);
-                    border-color: rgba(0, 123, 255, 0.2);
+                .btn-icon:hover {
+                    background: var(--text);
+                    color: var(--surface);
                 }
 
-                .link-update:hover {
-                    background: var(--bleu-vif);
-                    color: white;
-                    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
-                }
-
-                /* SUPPRIMER : VRAI ROUGE */
+                .link-update,
                 .link-delete {
-                    color: var(--rouge-vif);
-                    border-color: rgba(220, 53, 69, 0.2);
-                }
-
-                .link-delete:hover {
-                    background: var(--rouge-vif);
-                    color: white;
-                    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
+                    color: var(--text);
+                    border-color: var(--text);
                 }
 
                 .link-devis {
-                    text-decoration: none;
-                    font-size: 0.8rem;
-                    padding: 8px 14px;
-                    border-radius: 6px;
-                    background: var(--beige-clair);
-                    color: var(--gris-fonce);
-                    font-weight: 600;
-                    border: 1px solid var(--beige);
-                    transition: 0.2s;
-                }
-
-                .link-devis:hover {
-                    background: #dad4cb;
+                    font-size: 0.82rem;
                 }
 
                 .empty-msg {
                     text-align: center;
                     padding: 40px;
-                    color: var(--gris-moyen);
+                    color: var(--muted);
                     font-style: italic;
+                    border: 1px dashed var(--border);
+                    border-radius: 12px;
+                    margin-top: 10px;
                 }
             </style>
         </head>
@@ -252,7 +235,7 @@
                                                 onclick="return confirm('Supprimer définitivement cette demande ?')">
                                                 <i class="fa-solid fa-trash-can"></i>
                                             </a>
-                                            <a href="http://localhost/listeAlerte.php?idDemande=${d.id}">
+                                            <a href="http://localhost/listeAlerte.php?idDemande=${d.id}" class="link-devis">
                                                 Alertes
                                             </a>
                                         </td>

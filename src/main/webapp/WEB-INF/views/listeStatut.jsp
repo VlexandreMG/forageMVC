@@ -13,41 +13,42 @@
             <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
             <style>
                 :root {
-                    --gris-fonce: #4A4A4A;
-                    --gris-moyen: #8C8C8C;
-                    --gris-clair: #F5F5F5;
-                    --beige: #D9D2C5;
-                    --beige-clair: #F2EDE4;
-                    --blanc: #FFFFFF;
+                    --bg: #f4f4f4;
+                    --surface: #ffffff;
+                    --text: #111111;
+                    --muted: #666666;
+                    --border: #d9d9d9;
+                    --shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
                 }
 
                 body {
-                    font-family: 'Inter', sans-serif;
-                    background-color: var(--gris-clair);
-                    color: var(--gris-fonce);
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    background-color: var(--bg);
+                    color: var(--text);
                     margin: 0;
-                    padding: 40px;
+                    padding: 40px 20px;
                 }
 
                 .container {
                     max-width: 1100px;
                     margin: 0 auto;
-                    background: var(--blanc);
+                    background: var(--surface);
                     padding: 30px;
-                    border-radius: 12px;
-                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+                    border-radius: 14px;
+                    border: 1px solid var(--border);
+                    box-shadow: var(--shadow);
                 }
 
                 h1 {
-                    font-weight: 300;
+                    font-weight: 700;
                     text-transform: uppercase;
-                    letter-spacing: 2px;
-                    margin-bottom: 30px;
-                    border-bottom: 2px solid var(--beige-clair);
-                    padding-bottom: 15px;
+                    letter-spacing: 1px;
+                    margin-bottom: 28px;
+                    border-bottom: 1px solid var(--border);
+                    padding-bottom: 14px;
+                    font-size: 1.2rem;
                 }
 
-                /* Style du Tableau harmonisé */
                 table {
                     width: 100%;
                     border-collapse: collapse;
@@ -55,63 +56,70 @@
                 }
 
                 thead {
-                    background-color: var(--gris-fonce);
-                    color: var(--blanc);
+                    background-color: var(--text);
+                    color: var(--surface);
                 }
 
                 th {
                     padding: 15px;
                     text-align: left;
-                    font-weight: 600;
-                    font-size: 0.85rem;
+                    font-weight: 700;
+                    font-size: 0.82rem;
                     text-transform: uppercase;
+                    letter-spacing: 0.5px;
                 }
 
                 td {
                     padding: 15px;
-                    border-bottom: 1px solid var(--gris-clair);
-                    font-size: 0.9rem;
+                    border-bottom: 1px solid var(--border);
+                    font-size: 0.92rem;
                 }
 
                 tbody tr:hover {
-                    background-color: #fcfbf9;
+                    background-color: #fafafa;
                 }
 
                 .statut-badge {
                     padding: 5px 12px;
-                    border-radius: 20px;
+                    border-radius: 999px;
                     font-size: 0.75rem;
-                    font-weight: bold;
-                    background-color: rgb(169, 246, 169);
-                    color: var(--gris-fonce);
-                    border: 1px solid #c8e6c9;
+                    font-weight: 700;
+                    background-color: #f2f2f2;
+                    color: var(--text);
+                    border: 1px solid var(--border);
                 }
 
-                .link-details {
+                .link-details,
+                tbody td a {
                     text-decoration: none;
-                    font-size: 0.8rem;
+                    font-size: 0.82rem;
                     padding: 8px 14px;
-                    border-radius: 6px;
-                    background: var(--beige-clair);
-                    color: var(--gris-fonce);
+                    border-radius: 8px;
+                    background: var(--surface);
+                    color: var(--text);
                     font-weight: 600;
-                    border: 1px solid var(--beige);
-                    transition: 0.2s;
-                    display: inline-block;
+                    border: 1px solid var(--text);
+                    transition: background-color 0.2s ease, color 0.2s ease;
+                    display: inline-flex;
+                    align-items: center;
+                    margin-right: 8px;
+                    margin-bottom: 8px;
                 }
 
-                .link-details:hover {
-                    background: #dad4cb;
-                    transform: translateY(-1px);
+                .link-details:hover,
+                tbody td a:hover {
+                    background: var(--text);
+                    color: var(--surface);
                 }
 
                 .ref-demande {
-                    color: var(--gris-moyen);
+                    color: var(--muted);
                     font-weight: 600;
                     font-family: monospace;
-                    background: var(--gris-clair);
-                    padding: 2px 6px;
-                    border-radius: 4px;
+                    background: #f5f5f5;
+                    padding: 3px 8px;
+                    border-radius: 6px;
+                    border: 1px solid var(--border);
                 }
             </style>
         </head>

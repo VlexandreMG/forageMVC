@@ -13,20 +13,26 @@
                 rel="stylesheet">
             <style>
                 :root {
-                    --gris-fonce: #4A4A4A;
-                    --gris-moyen: #8C8C8C;
-                    --gris-clair: #F5F5F5;
-                    --beige: #D9D2C5;
-                    --beige-clair: #F2EDE4;
-                    --blanc: #FFFFFF;
-                    --rouge-action: #c0392b;
-                    --vert-action: #a3b18a;
+                    --bg: #f4f4f4;
+                    --surface: #ffffff;
+                    --text: #111111;
+                    --muted: #666666;
+                    --border: #d9d9d9;
+                    --shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+                    --gris-fonce: #111111;
+                    --gris-moyen: #666666;
+                    --gris-clair: #f5f5f5;
+                    --beige: #d9d9d9;
+                    --beige-clair: #ededed;
+                    --blanc: #ffffff;
+                    --rouge-action: #111111;
+                    --vert-action: #666666;
                 }
 
                 body {
-                    font-family: 'Inter', sans-serif;
-                    background-color: var(--gris-clair);
-                    color: var(--gris-fonce);
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    background-color: var(--bg);
+                    color: var(--text);
                     margin: 0;
                     padding: 40px 20px;
                 }
@@ -34,32 +40,33 @@
                 .container {
                     max-width: 1100px;
                     margin: 0 auto;
-                    background: var(--blanc);
+                    background: var(--surface);
                     padding: 35px;
-                    border-radius: 12px;
-                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+                    border-radius: 14px;
+                    border: 1px solid var(--border);
+                    box-shadow: var(--shadow);
                 }
 
                 h1 {
-                    font-weight: 300;
+                    font-weight: 700;
                     text-transform: uppercase;
-                    letter-spacing: 2px;
+                    letter-spacing: 1px;
                     margin-top: 0;
                     margin-bottom: 30px;
-                    border-bottom: 2px solid var(--beige-clair);
+                    border-bottom: 1px solid var(--border);
                     padding-bottom: 15px;
+                    font-size: 1.2rem;
                 }
 
                 h3 {
-                    font-weight: 600;
+                    font-weight: 700;
                     text-transform: uppercase;
                     font-size: 0.9rem;
                     letter-spacing: 1px;
                     margin-top: 0;
-                    color: var(--gris-moyen);
+                    color: var(--muted);
                 }
 
-                /* Organisation Section Supérieure (Gauche / Droite) */
                 .top-section {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
@@ -76,32 +83,36 @@
                     font-weight: 600;
                     margin-bottom: 8px;
                     font-size: 0.9rem;
+                    color: var(--muted);
                 }
 
                 select,
-                input {
+                input,
+                textarea {
                     width: 100%;
-                    padding: 12px;
-                    border: 1px solid var(--beige);
-                    border-radius: 6px;
-                    background-color: var(--blanc);
-                    font-family: 'Inter', sans-serif;
+                    padding: 12px 14px;
+                    border: 1px solid var(--border);
+                    border-radius: 8px;
+                    background-color: var(--surface);
+                    color: var(--text);
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                     font-size: 0.95rem;
                     box-sizing: border-box;
                     outline: none;
-                    transition: border-color 0.2s;
+                    transition: border-color 0.2s ease, box-shadow 0.2s ease;
                 }
 
                 select:focus,
-                input:focus {
-                    border-color: var(--gris-fonce);
+                input:focus,
+                textarea:focus {
+                    border-color: var(--text);
+                    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
                 }
 
-                /* Panneau de détails à droite */
                 .details-panel {
-                    background-color: #fcfbf9;
-                    border: 1px solid var(--beige-clair);
-                    border-radius: 8px;
+                    background-color: #fafafa;
+                    border: 1px solid var(--border);
+                    border-radius: 10px;
                     padding: 20px;
                     display: none;
                 }
@@ -115,17 +126,16 @@
 
                 .details-label {
                     font-weight: 600;
-                    color: var(--gris-moyen);
+                    color: var(--muted);
                 }
 
-                /* Section Sous-Devis en Lignes Épurées */
                 .section-title {
-                    font-size: 1.1rem;
+                    font-size: 1.05rem;
                     text-transform: uppercase;
                     letter-spacing: 1px;
                     margin-top: 30px;
                     margin-bottom: 15px;
-                    color: var(--gris-fonce);
+                    color: var(--text);
                 }
 
                 .ligne {
@@ -134,71 +144,57 @@
                     gap: 15px;
                     align-items: flex-end;
                     margin-bottom: 15px;
-                    background: #fff;
+                    background: var(--surface);
                     padding: 5px 0;
                 }
 
                 input[readonly] {
-                    background-color: var(--gris-clair);
-                    border-color: var(--beige-clair);
+                    background-color: #f3f3f3;
+                    border-color: var(--border);
                     font-weight: 600;
                 }
 
-                /* Boutons */
                 .btn {
                     padding: 12px 20px;
-                    border-radius: 6px;
+                    border-radius: 8px;
                     font-weight: 600;
                     cursor: pointer;
                     display: inline-flex;
                     align-items: center;
                     gap: 8px;
-                    border: none;
-                    transition: all 0.2s ease;
+                    border: 1px solid var(--text);
+                    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
                     font-size: 0.9rem;
                     text-decoration: none;
+                    background-color: var(--surface);
+                    color: var(--text);
                 }
 
                 .btn-add {
-                    background-color: var(--blanc);
-                    color: var(--gris-fonce);
-                    border: 1px solid var(--beige);
                     margin-top: 10px;
                 }
 
-                .btn-add:hover {
-                    background-color: var(--beige-clair);
+                .btn-add:hover,
+                .btn-delete:hover,
+                .btn-submit:hover {
+                    background-color: var(--text);
+                    color: var(--surface);
                 }
 
                 .btn-delete {
-                    background-color: transparent;
-                    color: var(--rouge-action);
-                    border: 1px solid #f9d5d1;
+                    background-color: var(--surface);
+                    color: var(--text);
                     padding: 12px;
-                    border-radius: 6px;
-                }
-
-                .btn-delete:hover {
-                    background-color: var(--rouge-action);
-                    color: white;
-                    border-color: var(--rouge-action);
+                    border-radius: 8px;
                 }
 
                 .btn-submit {
-                    background-color: var(--gris-fonce);
-                    color: var(--blanc);
                     padding: 14px 30px;
                     font-size: 1rem;
                     letter-spacing: 1px;
                     text-transform: uppercase;
                 }
 
-                .btn-submit:hover {
-                    background-color: #333333;
-                    transform: translateY(-1px);
-                }
-
-                /* Barre de Total globale */
                 .total-box {
                     display: flex;
                     justify-content: flex-end;
@@ -206,14 +202,21 @@
                     gap: 20px;
                     margin-top: 30px;
                     padding: 20px 0;
-                    border-top: 2px solid var(--beige-clair);
-                    font-size: 1.1rem;
+                    border-top: 1px solid var(--border);
+                    font-size: 1.05rem;
                 }
 
                 #total {
-                    font-size: 1.5rem;
+                    font-size: 1.4rem;
                     font-weight: 700;
-                    color: var(--gris-fonce);
+                    color: var(--text);
+                }
+
+                @media (max-width: 860px) {
+                    .top-section,
+                    .ligne {
+                        grid-template-columns: 1fr;
+                    }
                 }
             </style>
         </head>

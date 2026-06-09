@@ -10,38 +10,42 @@
             <title>Modifier Demande #${demande.id}</title>
             <style>
                 :root {
-                    --gris-fonce: #4A4A4A;
-                    --gris-moyen: #8C8C8C;
-                    --beige: #D9D2C5;
-                    --beige-clair: #F2EDE4;
-                    --blanc: #FFFFFF;
+                    --bg: #f4f4f4;
+                    --surface: #ffffff;
+                    --text: #111111;
+                    --muted: #666666;
+                    --border: #d9d9d9;
+                    --shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
                 }
 
                 body {
                     font-family: 'Segoe UI', Tahoma, sans-serif;
-                    background-color: #F5F5F5;
+                    background-color: var(--bg);
                     margin: 0;
                     padding: 40px 20px;
                     display: flex;
                     justify-content: center;
+                    color: var(--text);
                 }
 
                 .form-card {
-                    background: var(--blanc);
+                    background: var(--surface);
                     width: 100%;
                     max-width: 800px;
                     padding: 40px;
-                    border-radius: 15px;
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+                    border-radius: 14px;
+                    border: 1px solid var(--border);
+                    box-shadow: var(--shadow);
                 }
 
                 h1 {
-                    font-weight: 300;
+                    font-weight: 700;
                     text-transform: uppercase;
-                    letter-spacing: 2px;
+                    letter-spacing: 1px;
                     text-align: center;
                     margin-bottom: 40px;
-                    color: var(--gris-fonce);
+                    color: var(--text);
+                    font-size: 1.2rem;
                 }
 
                 .form-grid {
@@ -62,28 +66,29 @@
                 label {
                     font-size: 0.85rem;
                     font-weight: 600;
-                    color: var(--gris-moyen);
+                    color: var(--muted);
                     margin-bottom: 8px;
                 }
 
                 select,
                 input,
                 textarea {
-                    padding: 12px;
-                    border: 2px solid var(--beige-clair);
+                    padding: 12px 14px;
+                    border: 1px solid var(--border);
                     border-radius: 8px;
                     font-size: 1rem;
-                    background-color: #FCFBF9;
-                    color: var(--gris-fonce);
-                    transition: all 0.3s ease;
+                    background-color: #ffffff;
+                    color: var(--text);
+                    transition: border-color 0.2s ease, box-shadow 0.2s ease;
                     outline: none;
                 }
 
                 select:focus,
                 input:focus,
                 textarea:focus {
-                    border-color: var(--beige);
-                    background-color: #fff;
+                    border-color: var(--text);
+                    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+                    background-color: #ffffff;
                 }
 
                 textarea {
@@ -95,20 +100,21 @@
                     margin-top: 30px;
                     width: 100%;
                     padding: 15px;
-                    background-color: var(--gris-fonce);
-                    color: white;
-                    border: none;
+                    background-color: var(--text);
+                    color: var(--surface);
+                    border: 1px solid var(--text);
                     border-radius: 8px;
-                    font-size: 1.1rem;
-                    font-weight: bold;
+                    font-size: 1rem;
+                    font-weight: 700;
                     cursor: pointer;
-                    transition: all 0.3s;
+                    transition: background-color 0.2s ease, color 0.2s ease;
                     text-transform: uppercase;
+                    letter-spacing: 0.5px;
                 }
 
                 button:hover {
-                    background-color: var(--beige);
-                    color: var(--gris-fonce);
+                    background-color: var(--surface);
+                    color: var(--text);
                 }
 
                 @media (max-width: 600px) {
